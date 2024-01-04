@@ -3,6 +3,9 @@ import updatePage from './updatePage';
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
+const measurementToggle = document.querySelector('.measurement-toggle');
+let weatherData;
+let isMetric = false;
 
 async function getWeather(location) {
   const response = await fetch(
@@ -10,19 +13,36 @@ async function getWeather(location) {
     { mode: 'cors' },
   );
 
-  const weatherData = await response.json();
+  weatherData = await response.json();
+  console.log(weatherData);
   return weatherData;
 }
 
 function callApi(e) {
-  e.preventDefault();
+  // e.preventDefault();
   getWeather(input.value)
-    .then(updatePage)
+    .then((data) => {
+      updatePage(data, isMetric);
+    })
     .catch((error) => {
-      console.error(error);
+      throw new Error(error);
     });
-  getWeather(input.value).then(console.log);
-  e.target.reset();
+  // e.target.reset();
+}
+
+function toggleMeasurement() {
+  if (isMetric) {
+    isMetric = false;
+    measurementToggle.textContent = 'use °F';
+  } else {
+    isMetric = true;
+    measurementToggle.textContent = 'use °C';
+  }
+
+  updatePage(weatherData, isMetric);
 }
 
 form.addEventListener('submit', callApi);
+measurementToggle.addEventListener('click', toggleMeasurement);
+
+callApi();

@@ -1,4 +1,30 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 svg {
   height: 12px;
   width: 12px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.current-weather {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.current-temp {
+  font-size: 32px;
+}
+
+.current-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.extra-head {
+  color: gray;
 }

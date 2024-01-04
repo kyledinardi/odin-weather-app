@@ -12,6 +12,7 @@
         name="location"
         id="location-search"
         placeholder="Enter a location"
+        value="20817"
       />
       <button type="submit">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -21,23 +22,62 @@
         </svg>
       </button>
     </form>
-    <div class="current-weather">
-      <p class="location"></p>
-      <p class="time"></p>
-      <p class="current-temp"></p>
-      <p class="condition"></p>
-      <p class="max-temp"></p>
-      <p class="min-temp"></p>
-      <p class="feels-like"></p>
-      <p class="wind"></p>
-      <p class="humidity"></p>
-      <p class="uv"></p>
-      <p class="vis"></p>
-      <p class="cloud"></p>
-      <p class="chance-of-rain"></p>
-      <p class="sunrise"></p>
-      <p class="sunset"></p>
-      <p class="moon-phase"></p>
+    <button class="measurement-toggle">Use °C</button>
+    <div class="content">
+      <div class="heading">
+        <p class="location wi"></p>
+        <p class="time wi"></p>
+      </div>
+      <div class="current-weather">
+        <div class="current-main">
+          <p class="current-temp wi"></p>
+          <p class="condition wi"></p>
+          <p class="max-temp wi"></p>
+          <p class="min-temp wi"></p>
+        </div>
+        <div class="current-extra">
+          <div class="extra-card">
+            <p class="extra-head">Feels Like</p>
+            <p class="feels-like wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Wind</p>
+            <p class="wind wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Humidity</p>
+            <p class="humidity wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">UV Index</p>
+            <p class="uv wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Visibility</p>
+            <p class="vis wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Cloudiness</p>
+            <p class="cloud wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Chance of Rain</p>
+            <p class="chance-of-rain wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Moon Phase</p>
+            <p class="moon-phase wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Sunrise</p>
+            <p class="sunrise wi"></p>
+          </div>
+          <div class="extra-card">
+            <p class="extra-head">Sunset</p>
+            <p class="sunset wi"></p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
