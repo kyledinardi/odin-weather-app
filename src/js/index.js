@@ -3,9 +3,10 @@ import updatePage from './updatePage';
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
+const errorHandler = document.querySelector('.error-handler');
 const measurementToggle = document.querySelector('.measurement-toggle');
-let weatherData;
 let isMetric = false;
+let weatherData;
 
 async function getWeather(location) {
   const response = await fetch(
@@ -14,35 +15,43 @@ async function getWeather(location) {
   );
 
   weatherData = await response.json();
-  console.log(weatherData);
   return weatherData;
 }
 
-function callApi(e) {
-  // e.preventDefault();
-  getWeather(input.value)
+function callApi(location) {
+  getWeather(location)
     .then((data) => {
+      errorHandler.style.display = 'none';
       updatePage(data, isMetric);
     })
     .catch((error) => {
-      throw new Error(error);
+      errorHandler.style.display = 'block';
+      console.error(error);
     });
-  // e.target.reset();
 }
 
 function toggleMeasurement() {
   if (isMetric) {
     isMetric = false;
-    measurementToggle.textContent = 'use °F';
+    measurementToggle.textContent = 'Use °C';
   } else {
     isMetric = true;
-    measurementToggle.textContent = 'use °C';
+    measurementToggle.textContent = 'Use °F';
   }
 
   updatePage(weatherData, isMetric);
 }
 
-form.addEventListener('submit', callApi);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  callApi(input.value);
+  e.target.reset();
+});
+
+input.addEventListener('input', (e) => {
+  input.setCustomValidity('');
+})
+
 measurementToggle.addEventListener('click', toggleMeasurement);
 
-callApi();
+callApi('55555');

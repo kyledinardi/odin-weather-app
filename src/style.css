@@ -1,30 +1,100 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #37c8b7;
+}
+
+form {
+  margin: 0 auto 10px auto;
+  width: max-content;
+  position: relative;
+  display: grid;
+}
+
+input {
+  border-radius: 20px;
+  border: 2px solid #444;
+  padding-left: 10px;
+  height: 30px;
+}
+
+.submit-btn {
+  border: none;
+  padding: 0;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  cursor: pointer;
 }
 
 svg {
-  height: 12px;
-  width: 12px;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
 }
 
+.error-handler {
+  background-color: #93E1D8;
+  border-radius: 20px;
+  width: max-content;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.measurement-toggle {
+  margin: 10px auto;
+  display: block;
+}
+
+.content {
+  margin: auto;
+}
+
+.content-card {
+  background-color: #93E1D8;
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: max-content;
+  margin: auto;
+}
 .heading {
   text-align: center;
 }
 
+.location {
+  font-size: 1.2rem;
+}
+
 .current-weather {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+  margin: 30px auto;
+  gap: 30px;
+}
+
+.current-main {
+  font-size: 1.2rem;
+  align-self: flex-start;
 }
 
 .current-temp {
-  font-size: 32px;
+  font-size: 2rem;
+  margin: 20px;
 }
 
 .current-extra {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
 }
 
 .extra-head {
-  color: gray;
+  color: #555;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
