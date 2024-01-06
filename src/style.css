@@ -3,6 +3,10 @@
   background-color: #37c8b7;
 }
 
+body {
+  position: relative;
+}
+
 form {
   margin: 0 auto 10px auto;
   width: max-content;
@@ -34,26 +38,32 @@ svg {
 }
 
 .error-handler {
-  background-color: #93E1D8;
+  background-color: #93e1d8;
   border-radius: 20px;
   width: max-content;
-  margin: auto;
   padding: 10px 20px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 35px;
 }
 
 .measurement-toggle {
-  margin: 10px auto;
   display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .content {
-  margin: auto;
+  margin: 50px auto 0 auto;
 }
 
 .content-card {
-  background-color: #93E1D8;
+  background-color: #93e1d8;
   border-radius: 10px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   width: max-content;
   margin: auto;
 }
@@ -75,7 +85,8 @@ svg {
 
 .current-main {
   font-size: 1.2rem;
-  align-self: flex-start;
+  width: 200px;
+  text-align: center;
 }
 
 .current-temp {
@@ -87,14 +98,28 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 30px;
+  width: 400px;
+  justify-content: center;
 }
 
 .extra-head {
   color: #555;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.extra-head svg {
+  background-color: transparent;
 }
 
 .forecast {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
+  grid-template-columns: repeat(3, 200px);
+  justify-content: center;
+}
+
+.day {
+  font-size: 1.2rem;
 }

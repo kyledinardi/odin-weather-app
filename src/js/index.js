@@ -24,9 +24,8 @@ function callApi(location) {
       errorHandler.style.display = 'none';
       updatePage(data, isMetric);
     })
-    .catch((error) => {
+    .catch(() => {
       errorHandler.style.display = 'block';
-      console.error(error);
     });
 }
 
@@ -48,10 +47,10 @@ form.addEventListener('submit', (e) => {
   e.target.reset();
 });
 
-input.addEventListener('input', (e) => {
+input.addEventListener('input', () => {
   input.setCustomValidity('');
-})
+});
 
 measurementToggle.addEventListener('click', toggleMeasurement);
 
-callApi('55555');
+callApi('washington dc');
