@@ -3,10 +3,14 @@
   background-color: #37c8b7;
 }
 
-body {
+.page {
   position: relative;
   width: 900px;
   margin: auto;
+}
+
+.loading {
+  cursor: progress;
 }
 
 form {
