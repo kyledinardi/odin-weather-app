@@ -20,6 +20,7 @@ async function getWeather(location) {
 
 function callApi(location) {
   document.body.classList.add('loading');
+
   getWeather(location)
     .then((data) => {
       document.body.classList.remove('loading');
