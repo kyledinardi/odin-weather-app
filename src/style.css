@@ -116,10 +116,30 @@ svg {
 
 .forecast {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 300px);
+  gap: 30px;
   justify-content: center;
+}
+
+.forecast svg {
+  background-color: transparent;
+}
+
+.day-card {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  width: 200px;
+  height: 290px;
 }
 
 .day {
   font-size: 1.2rem;
+}
+
+.forecast-rain-chance {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-evenly;
+  align-items: center;
 }

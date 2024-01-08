@@ -53,4 +53,4 @@ input.addEventListener('input', () => {
 
 measurementToggle.addEventListener('click', toggleMeasurement);
 
-callApi('washington dc');
+callApi('Washington, DC');
